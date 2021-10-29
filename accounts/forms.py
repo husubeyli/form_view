@@ -35,7 +35,7 @@ class RegisterForm(forms.ModelForm):
             }),
             'deadline': forms.DateTimeInput(format=["%Y-%m-%d %H:%M:%S", ], attrs={
                 'id':'deadline', 
-                'placeholder': 'years-month-days', 
+                'placeholder': 'years-month-days hour:min', 
             }),
 
         }

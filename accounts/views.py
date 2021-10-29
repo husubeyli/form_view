@@ -14,7 +14,7 @@ class RegisterView(generic.CreateView):
     model = Consumer
     form_class = RegisterForm
     template_name = "register.html"
-    success_url = reverse_lazy('register')
+    success_url = reverse_lazy('accounts:register')
 
     def form_invalid(self, form):
         print(form.errors, 'error')

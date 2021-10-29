@@ -28,6 +28,7 @@ def create_secret_key(size=32):
 @receiver(post_save, sender=Consumer)
 def create_product(sender, instance, created,  **kwargs):
     if created:
+        from .tasks import check_for_deadline
         ran_int = create_secret_key()
         instance.secret_key = ran_int
         send_mail('subject', f'This is you membership id {ran_int}', 'husubayli@gmail.com', [instance.email,])

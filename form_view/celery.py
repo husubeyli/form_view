@@ -1,4 +1,5 @@
 from __future__ import absolute_import, unicode_literals
+from celery.schedules import crontab
 import os
 from celery import Celery
 
@@ -20,4 +21,13 @@ app.autodiscover_tasks()
 
 @app.task(bind=True)
 def debug_task(self):
-    print('Request: {0!r}'.format(self.request))
+    print('Request salam: {0!r}'.format(self.request))
+
+
+app.conf.beat_schedule = {
+    # Executes every Monday morning at 7:30 a.m.
+    'everyday-task': {
+        'task': 'accounts.tasks.check_for_deadline',
+        'schedule': crontab(hour=22, minute=22),
+    },
+}

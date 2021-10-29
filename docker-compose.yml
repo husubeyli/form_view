@@ -16,15 +16,13 @@ services:
         - ./nginx/proxy.conf/:/etc/nginx/proxy.conf
 
   postgres:
-    container_name:  dev_db
-    image:           postgres
-    ports:
-      - 5432:5432 # Bind host port 5432 to PostgreSQL port 5432
+    image: postgres:9.6.6
+    restart: always
     volumes:
-      - ./pgdb:/var/lib/postgresql/data
-    env_file: .env
-    environment:
-      - LC_ALL=C.UTF-8
+        - ./pgdb/:/var/lib/postgresql/
+    ports:
+        - "5432:5432"
+    env_file: ./.env
 
 
   redis:

@@ -90,7 +90,7 @@ if PROD:
             'USER': os.environ.get('POSTGRES_USER'),
             'PORT': os.environ.get('POSTGRES_PORT'),
             'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-            'HOST': os.environ.get('POSTGRES_PORT'),
+            'HOST': os.environ.get('POSTGRES_HOST'),
         }
     }
 else:

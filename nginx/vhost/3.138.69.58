@@ -1,0 +1,7 @@
+location /static/ {
+    alias /form_view/static/;
+}
+
+location /media/ {
+    alias /form_view/media/;
+}

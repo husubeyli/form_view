@@ -25,9 +25,9 @@ def debug_task(self):
 
 
 app.conf.beat_schedule = {
-    # Executes every Monday morning at 7:30 a.m.
+    # Executes every day morning at 10:00 a.m.
     'everyday-task': {
         'task': 'accounts.tasks.check_for_deadline',
-        'schedule': crontab(hour=22, minute=22),
+        'schedule': crontab(hour=10, minute=00),
     },
 }

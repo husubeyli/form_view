@@ -1,4 +1,6 @@
 import os
+import string
+import random
 from django.db.models.signals import post_save, pre_save
 from django.utils.timezone import now
 from django.dispatch import receiver
@@ -7,10 +9,8 @@ from django.core.mail import send_mail
 
 from .models import Consumer
 
-import string
-import random
-all_=string.digits+string.ascii_letters
 
+all_ = string.digits+string.ascii_letters
 
 
 def code_email_generator(size=32, chars=all_):
@@ -31,5 +31,6 @@ def create_product(sender, instance, created,  **kwargs):
         from .tasks import check_for_deadline
         ran_int = create_secret_key()
         instance.secret_key = ran_int
-        send_mail('subject', f'This is you membership id {ran_int}', 'husubayli@gmail.com', [instance.email,])
+        send_mail(
+            'subject', f'This is you membership id {ran_int}', 'husubayli@gmail.com', [instance.email, ])
         instance.save()

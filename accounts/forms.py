@@ -17,17 +17,17 @@ class RegisterForm(forms.ModelForm):
         ]
         widgets = {
             'email': forms.EmailInput(attrs={
-                'placeholder': 'Enter your email here',
+                'placeholder': _('Enter your email here'),
                 'id': "form3Example1q",
                 'class': "form-control"
             }),
             'position': forms.TextInput(attrs={
-                'placeholder': 'Enter your position',
+                'placeholder': _('Enter your position'),
                 'id': "position",
                 'class': "form-control"
             }),
             'position_info': forms.Textarea(attrs={
-                'placeholder': 'Enter your position',
+                'placeholder': _('Enter your position info'),
                 'id': "position_info",
                 'class': "form-control",
                 'cols': 50,
@@ -35,7 +35,7 @@ class RegisterForm(forms.ModelForm):
             }),
             'deadline': forms.DateTimeInput(format=["%Y-%m-%d %H:%M:%S", ], attrs={
                 'id':'deadline', 
-                'placeholder': 'years-month-days hour:min', 
+                'placeholder': _('years-month-days h:m'), 
             }),
 
         }
@@ -50,7 +50,7 @@ class LoginForm(forms.ModelForm):
         ]
         widgets = {
             'secret_key': forms.TextInput(attrs={
-                'placeholder': 'Secret key',
+                'placeholder': _('Secret key'),
                 'class': "form-control",
                 'style': "width: 100%",
             }),

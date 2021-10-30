@@ -1,8 +1,11 @@
-from os import error
-from django.http.response import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls.base import reverse, reverse_lazy
+
+from django.urls import translate_url
+from django.utils import translation
+
+
 from django.contrib.messages import success
 from accounts.models import Consumer
 
@@ -43,3 +46,12 @@ def login(request):
 def profile(request, id):
     user = Consumer.objects.get(id=id)
     return render(request, 'profile.html', context={'user': user})
+
+
+def set_language(request, lang_code):
+    lang = request.META.get("HTTP_REFERER", None)
+    
+    response = redirect(translate_url(lang, lang_code))
+    request.session[translation.LANGUAGE_SESSION_KEY] = lang_code
+
+    return response

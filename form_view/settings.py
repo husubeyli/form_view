@@ -24,7 +24,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'sh5(-b_v22==a5*ddy($(6&-@rdbjinx&3%^alq#-#ut6v+r1#')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False if os.environ.get('DEBUG') else True
+# DEBUG = False if os.environ.get('DEBUG') else True
+DEBUG =True
 PROD = not DEBUG
 
 
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -164,6 +166,11 @@ LANGUAGES = (
     ('tr', gettext('Turkey')),
 )
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_LANGUAGES = ('tr', 'en',)
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
 
 ROSETTA_MESSAGES_PER_PAGE = 15
 ROSETTA_MESSAGES_SOURCE_LANGUAGE_CODE = 'en'

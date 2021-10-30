@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-30 11:27+0300\n"
+"PO-Revision-Date: 2021-10-30 11:31+0156\n"
+"Last-Translator: b'  <admin@gmail.com>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
+
+#: accounts/forms.py:20
+#| msgid "Enter your position"
+msgid "Enter your email here"
+msgstr "E-postaniza girin"
+
+#: accounts/forms.py:25
+msgid "Enter your position"
+msgstr "Pozisyonunuzu girin"
+
+#: accounts/forms.py:30
+#| msgid "Enter your position"
+msgid "Enter your position info"
+msgstr "Pozisyon bilgilerini girin"
+
+#: accounts/forms.py:38
+msgid "years-month-days h:m"
+msgstr "yy-aa-gg s:d"
+
+#: accounts/forms.py:53
+msgid "Secret key"
+msgstr "Gizli anahtar"
+
+#: accounts/models.py:11 accounts/templates/register.html:23
+msgid "Position"
+msgstr "Pozisyon"
+
+#: accounts/models.py:12 accounts/templates/register.html:32
+msgid "Position info"
+msgstr "Pozisyon bilgileri"
+
+#: accounts/models.py:15
+msgid "deadline"
+msgstr "Son tarihi"
+
+#: accounts/models.py:16
+msgid "Secret Key"
+msgstr "Gizli anahtar"
+
+#: accounts/templates/base.html:35
+msgid "Go"
+msgstr "Git"
+
+#: accounts/templates/login.html:11
+msgid "Login Info"
+msgstr "Giriş Bilgileri"
+
+#: accounts/templates/register.html:11
+msgid "Registration Info"
+msgstr "Kayıt Bilgileri"
+
+#: accounts/templates/register.html:17
+msgid "Email"
+msgstr "E-posta"
+
+#: accounts/templates/register.html:43
+msgid "Last day"
+msgstr "Son tarih"
+
+#: form_view/settings.py:165
+msgid "English"
+msgstr "İngilizce"
+
+#: form_view/settings.py:166
+msgid "Turkey"
+msgstr "Türkce"

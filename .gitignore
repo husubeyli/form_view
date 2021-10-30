@@ -3,7 +3,7 @@ redisdb/
 .idea/
 media/
 localhost/
-locale/
+# locale/
 venv
 .venv
 db.sqlite3

@@ -28,6 +28,6 @@ app.conf.beat_schedule = {
     # Executes every Monday morning at 7:30 a.m.
     'everyday-task': {
         'task': 'accounts.tasks.check_for_deadline',
-        'schedule': crontab(minute='*/1'),
+        'schedule': crontab(hour=12, minute=49),
     },
 }

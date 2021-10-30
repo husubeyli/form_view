@@ -5,6 +5,8 @@ WORKDIR /code
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+RUN apt-get update && apt-get install -y \
+gettext 
 # RUN celery -A dost_report worker --beat --scheduler django --loglevel=info
 
 COPY . .

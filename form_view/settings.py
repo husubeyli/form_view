@@ -24,7 +24,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'sh5(-b_v22==a5*ddy($(6&-@rdbjinx&3%^alq#-#ut6v+r1#')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False if os.environ.get('DEBUG') else True
+# DEBUG = False if os.environ.get('DEBUG') else True
+DEBUG = True
 PROD = not DEBUG
 
 

@@ -13,7 +13,7 @@ class Consumer(models.Model):
 
     # moderations
     deadline = models.DateTimeField(_("deadline"), auto_now=False, auto_now_add=False)
-    secret_key = models.CharField(_("Secret Key"), max_length=2500)
+    secret_key = models.CharField(_("Secret Key"), max_length=2500, blank=True, null= True)
     status = models.BooleanField('Status', default=True)
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)

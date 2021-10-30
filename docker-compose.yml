@@ -40,7 +40,7 @@ services:
       dockerfile: celery.dockerfile
     volumes:
       - .:/code
-    command: celery -A form_view worker -l info
+    command: celery -A form_view worker -l info -B
     links:
       - redis
       - postgres

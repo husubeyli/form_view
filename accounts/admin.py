@@ -4,4 +4,11 @@ from accounts.models import Consumer
 
 # Register your models here.
 
-admin.site.register(Consumer)
+
+
+@admin.register(Consumer)
+class VacancyAdmin(admin.ModelAdmin):
+    list_display = ('email', 'position')
+    list_filter = ('email', 'position')
+    search_fields = ('email', 'position')
+    readonly_fields = ('secret_key',)

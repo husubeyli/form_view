@@ -4,8 +4,10 @@ redisdb/
 media/
 localhost/
 # locale/
-venv
-.venv
+
+venv/
+.venv/
+.env
 db.sqlite3
 *.pyc
 .vscode/sendgrid.env

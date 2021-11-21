@@ -1,4 +1,8 @@
+aiohttp==3.8.1
+aiosignal==1.2.0
 amqp==5.0.6
+async-timeout==4.0.1
+attrs==21.2.0
 billiard==3.6.4.0
 celery==5.1.2
 certifi==2021.10.8
@@ -12,8 +16,13 @@ django-celery-beat==2.2.1
 django-modeltranslation==0.17.3
 django-rosetta==0.9.4
 django-timezone-field==4.2.1
+frozenlist==1.2.0
+geoip2==4.5.0
+gunicorn==20.1.0
 idna==3.3
 kombu==5.1.0
+maxminddb==2.2.0
+multidict==5.2.0
 polib==1.1.1
 prompt-toolkit==3.0.21
 psycopg2-binary==2.8.6
@@ -24,7 +33,8 @@ redis==3.5.3
 requests==2.26.0
 six==1.16.0
 sqlparse==0.4.2
+typing-extensions==4.0.0
 urllib3==1.26.7
 vine==5.0.0
 wcwidth==0.2.5
-gunicorn==20.1.0
+yarl==1.7.2

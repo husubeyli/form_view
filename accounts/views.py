@@ -62,7 +62,7 @@ def set_language(request, lang_code):
     location = g.city(ip)
     location_country = location["country_name"]
     location_city = location["city"]
-    
+    print(location_country, location_city, 'alsalam')
     response = redirect(translate_url(lang, lang_code))
     request.session[translation.LANGUAGE_SESSION_KEY] = lang_code
 

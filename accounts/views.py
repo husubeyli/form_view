@@ -4,6 +4,7 @@ from django.urls.base import reverse, reverse_lazy
 
 from django.urls import translate_url
 from django.utils import translation
+from django.contrib.gis.geoip2 import GeoIP2
 
 
 from django.contrib.messages import success
@@ -50,6 +51,17 @@ def profile(request, id):
 
 def set_language(request, lang_code):
     lang = request.META.get("HTTP_REFERER", None)
+    
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+        
+    g = GeoIP2()
+    location = g.city(ip)
+    location_country = location["country_name"]
+    location_city = location["city"]
     
     response = redirect(translate_url(lang, lang_code))
     request.session[translation.LANGUAGE_SESSION_KEY] = lang_code
